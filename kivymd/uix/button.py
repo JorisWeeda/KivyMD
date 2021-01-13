@@ -474,6 +474,7 @@ from kivymd.uix.tooltip import MDTooltip
 
 Builder.load_string(
     """
+#: import md_icons kivymd.icon_definitions
 <BaseButton>
     canvas:
         Clear
