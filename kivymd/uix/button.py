@@ -476,6 +476,7 @@ from kivymd.uix.tooltip import MDTooltip
 Builder.load_string(
     """
 #: import md_icons kivymd.icon_definitions
+
 <BaseButton>
     canvas:
         Clear
@@ -509,11 +510,7 @@ Builder.load_string(
     canvas:
         Clear
         Color:
-            rgba:
-                (self.md_bg_color if root.icon in md_icons else (0, 0, 0, 0)) \
-                if not root.disabled else \
-                (root.md_bg_color_disabled if root.md_bg_color_disabled \
-                else root.theme_cls.disabled_hint_text_color)
+            rgba: self._current_button_color if root.icon in md_icons else (0, 0, 0, 0)
         Ellipse:
             size: self.size
             pos: self.pos
